@@ -4,10 +4,16 @@ import Button from "./Button";
 import Image from "next/image";
 import { FeatredCardProps } from "@types";
 
-const FeaturesCard: React.FC<FeatredCardProps> = ({ icon, title, content, index }) => (
+const FeaturesCard: React.FC<FeatredCardProps> = ({
+  icon,
+  title,
+  content,
+  index,
+}) => (
   <div
-    className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"
-      } feature-card`}
+    className={`flex flex-row p-6 rounded-[20px] ${
+      index !== features.length - 1 ? "mb-6" : "mb-0"
+    } feature-card`}
   >
     <div
       className={`w-[64px] h-[64px] rounded-full bg-dimBlue ${styles.flexCenter}`}
@@ -29,12 +35,19 @@ const Business: React.FC = () => (
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
         You do the business, <br className="sm:block hidden" />
-        We'll handle the money.
+        We'll handle the Growth.
       </h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        With the right credit card, you can improve your financial lif e by
-        building credit, earning rewards and saving money. But with hundreds of
-        credits cards on the market.
+      <p className={`${styles.paragraph} max-w-[470px] mt-5 justify-center text-justify`}>
+        At ProcessPilot, we believe that businesses should focus on growth, not
+        bottlenecks. Our AI-powered SaaS platform helps enterprises optimize
+        their workflows, automate repetitive tasks, and gain actionable insights
+        to improve efficiency and profitability. With intelligent process
+        mapping, predictive bottleneck analysis, and real-time monitoring, we
+        empower businesses to make data-driven decisions with confidence.
+        Whether it's reducing costs, improving productivity, or enhancing
+        digital transformation, ProcessPilot is your trusted partner in business
+        optimization. Join us in revolutionizing the way businesses operate and
+        grow.
       </p>
       <Button styles="mt-10" />
     </div>

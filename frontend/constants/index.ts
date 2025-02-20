@@ -1,47 +1,55 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star } from "@/public/assets";
+import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox } from "@/public/assets";
+
+import { FaBrain, FaChartLine, FaShieldAlt, FaChartPie, FaLightbulb } from "react-icons/fa";
 
 export const navLinks = [
     {
-        id: "home",
-        title: "Home",
+        id: "services",
+        title: "Services",
     },
-    {
-        id: "features",
-        title: "Features",
-    },
-    {
-        id: "product",
-        title: "Product",
-    },
-    {
-        id: "clients",
-        title: "Clients",
-    },
+    
 ];
+
 
 export const features = [
     {
         id: "feature-1",
-        icon: star,
-        title: "Rewards",
+        icon: FaBrain,
+        title: "AI-Driven Workflow Optimization",
         content:
-            "The best credit cards offer some tantalizing combinations of promotions and prizes",
+            "Automate and refine processes with smart AI insights to enhance efficiency and productivity.",
     },
     {
         id: "feature-2",
-        icon: shield,
-        title: "100% Secured",
+        icon: FaChartLine,
+        title: "Predictive Bottleneck Analysis",
         content:
-            "We take proactive steps make sure your information and transactions are secure.",
+            "Identify and resolve inefficiencies before they impact business operations and performance.",
     },
     {
         id: "feature-3",
-        icon: send,
-        title: "Balance Transfer",
+        icon: FaChartPie,
+        title: "Real-Time KPI Tracking",
         content:
-            "A balance transfer credit card can save you a lot of money in interest charges.",
+            "Monitor and improve business performance with live dashboards and data-driven insights.",
+    },
+    {
+        id: "feature-4",
+        icon: FaShieldAlt,
+        title: "Scalable & Secure",
+        content:
+            "Designed for enterprises of all sizes with robust data protection and compliance standards.",
+    },
+    {
+        id: "feature-5",
+        icon: FaLightbulb,
+        title: "Actionable Business Insights",
+        content:
+            "Make informed decisions on investments, marketing, and expansion with AI-powered analytics.",
     },
 ];
+
+
 
 export const feedback = [
     {
