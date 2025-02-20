@@ -51,7 +51,7 @@ mail_prompt = PromptTemplate(
     """
         You are a marketing professional handling custom mail generation. Generate HTML for an email with
         relevant information and styling for company information: {company_info}. Make sure the mail is
-        stylized properly and looks professional.
+        stylized properly and looks professional. Make sure to add no images.
     """
 )
 

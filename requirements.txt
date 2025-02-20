@@ -6,3 +6,4 @@ langchain_core
 flask
 tavily-python
 flask-cors
+streamlit
