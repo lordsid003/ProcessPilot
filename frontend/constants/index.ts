@@ -17,61 +17,37 @@ export const navLinks = [
 export const features = [
     {
         id: "feature-1",
-<<<<<<< HEAD
         icon: brain,
         title: "AI-Driven Workflow Optimization",
-=======
-        icon: FaBrain,
-        title: "AI-Powered Business Analytics",
->>>>>>> 60607857ea62596ed7c4d47161f7943e3a499287
         content:
             "Leverage AI-driven insights to optimize business strategies and decision-making processes.",
     },
     {
         id: "feature-2",
-<<<<<<< HEAD
         icon: linechart,
         title: "Predictive Bottleneck Analysis",
-=======
-        icon: FaChartLine,
-        title: "Predictive Market Trends",
->>>>>>> 60607857ea62596ed7c4d47161f7943e3a499287
+
         content:
             "Analyze historical data and forecasts to anticipate market shifts and stay ahead of competitors.",
     },
     {
         id: "feature-3",
-<<<<<<< HEAD
         icon: piechart,
         title: "Real-Time KPI Tracking",
-=======
-        icon: FaChartPie,
-        title: "Real-Time Financial Metrics",
->>>>>>> 60607857ea62596ed7c4d47161f7943e3a499287
         content:
             "Track key financial indicators such as revenue, expenses, and profitability in real-time.",
     },
     {
         id: "feature-4",
-<<<<<<< HEAD
         icon: shield,
         title: "Scalable & Secure",
-=======
-        icon: FaShieldAlt,
-        title: "Data Security & Compliance",
->>>>>>> 60607857ea62596ed7c4d47161f7943e3a499287
         content:
             "Ensure data protection and compliance with industry standards for secure business operations.",
     },
     {
         id: "feature-5",
-<<<<<<< HEAD
         icon: bulb,
         title: "Actionable Business Insights",
-=======
-        icon: FaLightbulb,
-        title: "Strategic Growth Insights",
->>>>>>> 60607857ea62596ed7c4d47161f7943e3a499287
         content:
             "Identify opportunities for expansion, investment, and operational efficiency through AI-powered analytics.",
     },
@@ -83,43 +59,27 @@ export const feedback = [
     {
         id: "feedback-1",
         content:
-<<<<<<< HEAD
             "Process Pilot has completely transformed the way we handle data and insights. The automation and accuracy they provide have saved us countless hours. Highly recommend!",
         name: "Herman Jensen",
         title: "Founder & Leader",
-=======
-            "The AI-driven insights have transformed how we strategize and optimize our operations.",
-        name: "Emily Carter",
-        title: "CEO, GrowthTech",
->>>>>>> 60607857ea62596ed7c4d47161f7943e3a499287
+
         img: people01,
     },
     {
         id: "feedback-2",
         content:
-<<<<<<< HEAD
-            "Thanks to Process Pilot, we now have access to real-time stock insights and business analytics. Their platform is intuitive, fast, and incredibly reliable",
-        name: "Steve Mark",
-        title: "Founder & Leader",
-=======
             "Predictive analytics helped us make proactive decisions, saving both time and money.",
         name: "Michael Johnson",
         title: "COO, MarketPulse",
->>>>>>> 60607857ea62596ed7c4d47161f7943e3a499287
         img: people02,
     },
     {
         id: "feedback-3",
         content:
-<<<<<<< HEAD
-            "Process Pilot’s insights have given us a competitive edge in the market. Their service is seamless, and the results are always spot on!",
-        name: "Kenn Gallagher",
-        title: "Founder & Leader",
-=======
+
             "Real-time KPI tracking has given us the clarity we needed to scale our business effectively.",
         name: "Sophia Williams",
         title: "Founder, FinWise",
->>>>>>> 60607857ea62596ed7c4d47161f7943e3a499287
         img: people03,
     },
 ];
