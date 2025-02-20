@@ -8,7 +8,7 @@ const Footer: React.FC = () => (
       <div className="flex-1 flex flex-col justify-start mr-10">
         {/* <Image
           src={logo}
-          alt="hoobank"
+          alt="ProcessPilot"
           className="w-[266px] h-[72px] object-contain"
         /> */}
         <h1>Process Pilot</h1>
