@@ -31,8 +31,9 @@ export default function ServicesPage() {
     const requestBody: any = {
       company_name: serviceId === "stock_info" || serviceId === "stock_summary" ? userInput : undefined,
       category: serviceId === "insights" ? extraInput : undefined,
+      idea: serviceId === "insights" ? userInput : undefined, 
       company_info: serviceId === "custom_mail" ? userInput : undefined,
-    };
+    };    
 
     try {
       const res = await fetch(`https://processpilot.pythonanywhere.com/${serviceId}`, {
