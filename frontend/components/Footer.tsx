@@ -43,7 +43,7 @@ const Footer: React.FC = () => (
     </div>
     <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
       <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white">
-        2022 HooBank. All Rights Reserved.
+        ProcessPilot.All Rights Reserved.
       </p>
       <div className="flex flex-row md:mt-0 mt-6">
         {socialMedia.map((social, index) => (
