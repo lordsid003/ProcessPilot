@@ -7,6 +7,7 @@ import Image from "next/image";
 const Navbar: React.FC = () => {
   const [toggle, setToggle] = useState(false);
   return (
+
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <Image src={logo} alt="ProcessPilot" width={124} height={32} />
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">

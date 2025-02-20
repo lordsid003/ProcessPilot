@@ -1,6 +1,9 @@
 import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox } from "@/public/assets";
-
-import { FaBrain, FaChartLine, FaShieldAlt, FaChartPie, FaLightbulb } from "react-icons/fa";
+import brain from "../public/assets/brain-solid (1).svg"
+import linechart from "../public/assets/chart-line-solid (1).svg"
+import bulb from "../public/assets/lightbulb-solid.svg"
+import shield from "../public/assets/shield-solid (1).svg"
+import piechart from "../public/assets/chart-pie-solid.svg"
 
 export const navLinks = [
     {
@@ -14,36 +17,37 @@ export const navLinks = [
 export const features = [
     {
         id: "feature-1",
-        icon: FaBrain,
-        title: "AI-Powered Business Analytics",
+        icon: brain,
+        title: "AI-Driven Workflow Optimization",
         content:
             "Leverage AI-driven insights to optimize business strategies and decision-making processes.",
     },
     {
         id: "feature-2",
-        icon: FaChartLine,
-        title: "Predictive Market Trends",
+        icon: linechart,
+        title: "Predictive Bottleneck Analysis",
+
         content:
             "Analyze historical data and forecasts to anticipate market shifts and stay ahead of competitors.",
     },
     {
         id: "feature-3",
-        icon: FaChartPie,
-        title: "Real-Time Financial Metrics",
+        icon: piechart,
+        title: "Real-Time KPI Tracking",
         content:
             "Track key financial indicators such as revenue, expenses, and profitability in real-time.",
     },
     {
         id: "feature-4",
-        icon: FaShieldAlt,
-        title: "Data Security & Compliance",
+        icon: shield,
+        title: "Scalable & Secure",
         content:
             "Ensure data protection and compliance with industry standards for secure business operations.",
     },
     {
         id: "feature-5",
-        icon: FaLightbulb,
-        title: "Strategic Growth Insights",
+        icon: bulb,
+        title: "Actionable Business Insights",
         content:
             "Identify opportunities for expansion, investment, and operational efficiency through AI-powered analytics.",
     },
@@ -55,9 +59,10 @@ export const feedback = [
     {
         id: "feedback-1",
         content:
-            "The AI-driven insights have transformed how we strategize and optimize our operations.",
-        name: "Emily Carter",
-        title: "CEO, GrowthTech",
+            "Process Pilot has completely transformed the way we handle data and insights. The automation and accuracy they provide have saved us countless hours. Highly recommend!",
+        name: "Herman Jensen",
+        title: "Founder & Leader",
+
         img: people01,
     },
     {
@@ -71,6 +76,7 @@ export const feedback = [
     {
         id: "feedback-3",
         content:
+
             "Real-time KPI tracking has given us the clarity we needed to scale our business effectively.",
         name: "Sophia Williams",
         title: "Founder, FinWise",

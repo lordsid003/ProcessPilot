@@ -1,11 +1,14 @@
 import { apple, bill, google } from "@/public/assets";
 import styles, { layout } from "@/styles/style";
+import Link from "@node_modules/next/link";
 import Image from "next/image";
 const Billing: React.FC = () => (
   <section id="product" className={layout.sectionReverse}>
     <div className={layout.sectionImgReverse}>
       <Image
-        src={bill}
+        src="/assets/stock_image.jpg"
+        height={500}
+        width={300}
         alt="billing"
         className="w-[100%] h-[100%] relative z-[5]"
       />
@@ -14,26 +17,24 @@ const Billing: React.FC = () => (
     </div>
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-        Easily control your <br className="sm:block hidden" /> billing &
-        invoicing.
+        Stay Updated with <br className="sm:block hidden" /> Real-Time Stock
+        Info
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio aenean
-        neque. Integer Fusce ipsum ori rhounsx aliporttitor integer platea
-        placerat.
+        Get instant access to live stock prices, market trends, and historical
+        data. Make informed investment decisions with accurate insights and
+        analytics. Stay ahead with real-time updates and portfolio tracking.
       </p>
-      <div className="flex flex-row flex-wrap sm:mt-10 mt-6">
-        <Image
-          src={apple}
-          alt="apple_store"
-          className="w-[128px] h-[42px] object-contain mr-5 cursor-pointer"
-        />
-        <Image
-          src={google}
-          alt="google_play"
-          className="w-[128px] h-[42px] object-contain cursor-pointer"
-        />
-      </div>
+
+      <div className="flex flex-row flex-wrap sm:mt-10 mt-6 text-white border border-black p-3 rounded-lg">
+  <Link 
+    href="/services" 
+    className="relative px-6 py-3 bg-green-600 text-white font-semibold rounded-lg transition-all duration-300 ease-in-out hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-1"
+  >
+    Get Stock Info
+  </Link>
+</div>
+
     </div>
   </section>
 );
