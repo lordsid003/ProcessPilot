@@ -10,81 +10,121 @@ const services = [
 ];
 
 export default function ServicesPage() {
+  const [userInput, setUserInput] = useState("");
+  const [extraInput, setExtraInput] = useState(""); // ✅ Define extraInput state
   const [data, setData] = useState<string | null>(null);
-  const [activeService, setActiveService] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const fetchData = async (serviceId: string) => {
-    try {
-      const requestBody = {}; // Define body based on API requirements
-  
-      if (serviceId === "stock_info" || serviceId === "stock_summary") {
-        requestBody.company_name = "Tesla"; // Replace with user input
-      } else if (serviceId === "insights") {
-        requestBody.category = "Finance";
-        requestBody.idea = "Stock market trends"; // Replace with user input
-      } else if (serviceId === "custom_mail") {
-        requestBody.company_info = "Example Company"; // Replace with user input
+    if (serviceId === "insights") {
+      if (!userInput.trim() || !extraInput.trim()) {
+        alert("Please enter both Company Name and Category!");
+        return;
       }
-  
+    } else {
+      if (!userInput.trim()) {
+        alert("Please enter the required input!");
+        return;
+      }
+    }
+
+    setLoading(true);
+    setSelectedService(serviceId);
+
+    const requestBody: any = {};
+
+    if (serviceId === "stock_info" || serviceId === "stock_summary") {
+      requestBody.company_name = userInput;
+    } else if (serviceId === "insights") {
+      requestBody.company_name = userInput;
+      requestBody.category = extraInput;
+    } else if (serviceId === "custom_mail") {
+      requestBody.company_info = userInput;
+    }
+
+    try {
       const res = await fetch(`https://processpilot.pythonanywhere.com/${serviceId}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
       });
-  
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-  
+
+      if (!res.ok) throw new Error("Failed to fetch data");
+
       const result = await res.json();
-      setData(JSON.stringify(result, null, 2)); // Pretty print response
+      setData(JSON.stringify(result.response, null, 2));
     } catch (error) {
       console.error("Error fetching data:", error);
+      setData("Error fetching data. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
-  
-  
 
   return (
-    <div className="flex flex-col items-center p-10 min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6">
       <motion.h1
-        className="text-4xl font-extrabold mb-6"
+        className="text-3xl font-bold mb-6"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
       >
-        Our Services
+        Our Services 🚀
       </motion.h1>
-      <motion.div 
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
+
+      {/* User Input */}
+      <motion.input
+        type="text"
+        placeholder="Enter company name..."
+        value={userInput}
+        onChange={(e) => setUserInput(e.target.value)}
+        className="p-3 text-black rounded-md shadow-md w-80 mb-3"
+        whileFocus={{ scale: 1.05 }}
+      />
+
+      {/* Extra Input: Show only if "Insights" is selected */}
+      {selectedService === "insights" && (
+        <motion.input
+          type="text"
+          placeholder="Enter category..."
+          value={extraInput}
+          onChange={(e) => setExtraInput(e.target.value)}
+          className="p-3 text-black rounded-md shadow-md w-80 mb-6"
+          whileFocus={{ scale: 1.05 }}
+        />
+      )}
+
+      {/* Service Buttons */}
+      <div className="grid grid-cols-2 gap-4 mb-6">
         {services.map((service) => (
           <motion.button
             key={service.id}
-            className={`px-6 py-3 rounded-lg text-lg font-semibold transition-all duration-300 transform 
-              ${activeService === service.id ? "bg-yellow-400 text-black scale-105" : "bg-white text-blue-900 hover:bg-yellow-300 hover:scale-110"}`}
+            className={`px-5 py-3 rounded-lg font-semibold transition-all ${
+              selectedService === service.id && loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-white text-blue-600 hover:bg-blue-400 hover:text-white"
+            }`}
             onClick={() => fetchData(service.id)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            disabled={selectedService === service.id && loading}
           >
-            {service.name}
+            {loading && selectedService === service.id ? "Loading..." : service.name}
           </motion.button>
         ))}
-      </motion.div>
+      </div>
+
+      {/* Response Data */}
       {data && (
         <motion.div
-          className="w-full max-w-lg p-6 bg-white text-gray-900 rounded-lg shadow-lg mt-6"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          className="bg-gray-100 text-black p-5 rounded-lg shadow-md w-96"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <h2 className="text-2xl font-bold mb-3 text-center">Service Data:</h2>
-          <p className="text-lg text-center">{data}</p>
+          <h2 className="text-xl font-semibold mb-2">Response:</h2>
+          <pre className="text-sm whitespace-pre-wrap">{data}</pre>
         </motion.div>
       )}
     </div>
