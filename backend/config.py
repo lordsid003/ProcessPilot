@@ -32,15 +32,20 @@ data_prompt = PromptTemplate(
 )
 
 # Stock information extraction for a company
+
 stock_prompt = PromptTemplate(
     input_variables=["company_name", "stock_info"],
     template=
     """
-        You are an excellent financial analyst. Summarize the following stock information for {company_name} "
-        in plain language with key insights: {stock_info}". 
-        Also generate 4 points for these.
-        - Give list of recent stock prices\n.
-        - Also provide insights useful for the company\n.
+        You are an excellent financial analyst. Summarize the following stock information for {company_name}
+        in plain language with key insights: {stock_info}
+
+        Your output must include:
+        - `stock_info`: A paragraph summarizing the stock situation.
+        - `stock_price`: A list of 4 recent stock price notes.
+        - `insights`: A list of 4 actionable insights for the company.
+
+        Format your response strictly as a JSON object.
     """,
     validate_template=True
 )

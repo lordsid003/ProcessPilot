@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+import streamlit as st
 from langchain_groq import ChatGroq
 from tavily import TavilyClient
 from config import stock_prompt, idea_prompt, data_prompt, mail_prompt, FormatModel, IdeaModel, DataModel, MailModel
@@ -11,10 +12,12 @@ class Model(object):
         self.llm = ChatGroq(
             temperature=0.8,
             model="llama-3.1-8b-instant",
-            api_key=os.getenv("GROQ_API_KEY")
+            # api_key=os.getenv("GROQ_API_KEY")
+            api_key=st.secrets["GROQ_API_KEY"]
         )
         self.client = TavilyClient(
-            api_key=os.getenv("TAVILY_API_KEY")
+            # api_key=os.getenv("TAVILY_API_KEY")
+            api_key=st.secrets["TAVILY_API_KEY"]
         )
     
     def get_stock_info(self, company_name: str):
